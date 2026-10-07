@@ -14,6 +14,11 @@ int main () {
     int arr[] = {10, 20, 30, 40, 50};
     int size = sizeof(arr) / sizeof(arr[0]);
     int target = 30;
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    cout << "Searching for the element: " << target << endl;
 
     int index = linearSearch(arr, size, target);
     if (index != -1) {
