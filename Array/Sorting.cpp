@@ -21,6 +21,20 @@ void bubbleSort(int arr[], int size) {
     }
 }
 
+void selectionSort(int arr[], int size) {
+    for (int i = 0; i < size - 1; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j < size; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        // Swap arr[i] and arr[minIndex]
+        int temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+    }
+}
 
 int main () {
     int arr1[] = {2, 6, 1, 8, 4, 3, 5, 7, 9};
@@ -34,6 +48,10 @@ int main () {
 
     int arr2[] = {2, 6, 1, 8, 4, 3, 5, 7, 9};
     int size2 = sizeof(arr2) / sizeof(arr2[0]);
+    printArray(arr2, size2);
+
+    selectionSort(arr2, size2);
+    cout<<"after selection sort: ";
     printArray(arr2, size2);
 
     return 0;
